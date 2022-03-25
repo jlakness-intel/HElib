@@ -143,6 +143,7 @@ option(HELIB_DEBUG
 option(ENABLE_TEST "Enable tests" OFF)
 option(USE_INTEL_HEXL "Use Intel HEXL library" OFF)
 option(PEDANTIC_BUILD "Use -Wall -Wpedantic -Wextra -Werror during build" ON)
+option(EXAMPLE_BUILD "Build examples" OFF)
 
 # Add properties dependent to PACKAGE_BUILD
 if (PACKAGE_BUILD)
@@ -423,3 +424,7 @@ else (PACKAGE_BUILD)
   # external project
   add_subdirectory(src)
 endif (PACKAGE_BUILD)
+
+if(EXAMPLE_BUILD)
+  add_subdirectory(examples)
+endif(EXAMPLE_BUILD)
